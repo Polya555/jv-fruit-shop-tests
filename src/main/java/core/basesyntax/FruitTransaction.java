@@ -5,6 +5,41 @@ public class FruitTransaction {
     private String fruit;
     private int quantity;
 
+    public FruitTransaction(Operation operation, String fruit, int quantity) {
+        this.operation = operation;
+        this.fruit = fruit;
+        this.quantity = quantity;
+    }
+
+    public enum Operation {
+        BALANCE("b"),
+        SUPPLY("s"),
+        PURCHASE("p"),
+        RETURN("r");
+
+        private final String action;
+
+        Operation(String action) {
+            this.action = action;
+        }
+
+        public String getAction() {
+            return action;
+        }
+
+        public static Operation getOperation(String code) {
+            for (Operation operation : values()) {
+                if (operation.getAction().equals(code)) {
+                    return operation;
+                }
+            }
+            throw new IllegalArgumentException("Unknown operation code: " + code);
+        }
+    }
+
+    public FruitTransaction() {
+    }
+
     public Operation getOperation() {
         return operation;
     }
@@ -27,22 +62,5 @@ public class FruitTransaction {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
-    }
-
-    public enum Operation {
-        BALANCE("b"),
-        SUPPLY("s"),
-        PURCHASE("p"),
-        RETURN("r");
-
-        private String action;
-
-        Operation(String action) {
-            this.action = action;
-        }
-
-        public String getAction() {
-            return action;
-        }
     }
 }

@@ -5,7 +5,8 @@ import core.basesyntax.Storage;
 import java.util.Map;
 
 public class ReportGeneratorImpl implements ReportGenerator {
-    private static final String REPORT_HEADER = "fruit,quantity\n";
+    private static final String REPORT_HEADER = "fruit,quantity";
+    private static final String COMMA = ",";
     private final Storage storage;
 
     public ReportGeneratorImpl(Storage storage) {
@@ -17,7 +18,7 @@ public class ReportGeneratorImpl implements ReportGenerator {
         StringBuilder report = new StringBuilder(REPORT_HEADER);
         for (Map.Entry<String, Integer> entry : storage.getAll().entrySet()) {
             report.append(entry.getKey())
-                    .append(",")
+                    .append(COMMA)
                     .append(entry.getValue())
                     .append("\n");
         }

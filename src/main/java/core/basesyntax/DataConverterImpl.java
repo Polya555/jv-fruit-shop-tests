@@ -9,15 +9,11 @@ public class DataConverterImpl implements DataConverter {
         List<FruitTransaction> transactions = new ArrayList<>();
         for (String line : data) {
             String[] parts = line.split(",");
-            FruitTransaction transaction = new FruitTransaction();
-            for (FruitTransaction.Operation operation : FruitTransaction.Operation.values()) {
-                if (operation.getAction().equals(parts[0])) {
-                    transaction.setOperation(operation);
-                    break;
-                }
-            }
-            transaction.setFruit(parts[1]);
-            transaction.setQuantity(Integer.parseInt(parts[2]));
+            FruitTransaction.Operation operation = FruitTransaction.Operation
+                    .getOperation(parts[0]);
+            String fruit = parts[1];
+            int quantity = Integer.parseInt(parts[2].trim());
+            FruitTransaction transaction = new FruitTransaction(operation, fruit, quantity);
             transactions.add(transaction);
         }
         return transactions;
