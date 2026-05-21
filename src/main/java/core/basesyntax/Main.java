@@ -1,7 +1,5 @@
 package core.basesyntax;
 
-import core.basesyntax.serviceimpl.ReportGeneratorImpl;
-import core.basesyntax.serviceimpl.ShopServiceImpl;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

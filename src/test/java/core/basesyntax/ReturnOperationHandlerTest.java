@@ -1,12 +1,20 @@
 package core.basesyntax;
 
-import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class ReturnOperationHandlerTest {
+    private Storage storage;
+
+    @BeforeEach
+    void setUp() {
+        storage = new Storage();
+    }
+
     @Test
     void returnOperation_shouldIncreaseFruitQuantity() {
-        Storage storage = new Storage();
         storage.getFruits().put("apple", 5);
         FruitTransaction transaction = new FruitTransaction();
         transaction.setFruit("apple");
@@ -14,6 +22,6 @@ public class ReturnOperationHandlerTest {
         transaction.setOperation(FruitTransaction.Operation.RETURN);
         ReturnOperationHandler handler = new ReturnOperationHandler(storage);
         handler.apply(transaction);
-        Assertions.assertEquals(8, storage.getFruits().get("apple"));
+        assertEquals(8, storage.getFruits().get("apple"));
     }
 }

@@ -1,7 +1,5 @@
-package core.basesyntax.serviceimpl;
+package core.basesyntax;
 
-import core.basesyntax.ReportGenerator;
-import core.basesyntax.Storage;
 import java.util.Map;
 
 public class ReportGeneratorImpl implements ReportGenerator {

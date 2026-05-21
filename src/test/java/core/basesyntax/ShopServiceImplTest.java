@@ -1,11 +1,11 @@
 package core.basesyntax;
 
-import core.basesyntax.serviceimpl.ShopServiceImpl;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -35,6 +35,6 @@ public class ShopServiceImplTest {
         transactions.add(balance);
         transactions.add(supply);
         shopService.process(transactions);
-        Assertions.assertEquals(70, storage.getFruits().get("apple"));
+        assertEquals(70, storage.getFruits().get("apple"));
     }
 }

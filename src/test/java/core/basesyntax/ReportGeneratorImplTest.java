@@ -1,28 +1,32 @@
 package core.basesyntax;
 
-import core.basesyntax.serviceimpl.ReportGeneratorImpl;
-import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class ReportGeneratorImplTest {
+    private Storage storage;
+
+    @BeforeEach
+    void setUp() {
+        storage = new Storage();
+    }
+
     @Test
     void getReport_emptyStorage_returnsOnlyHeader() {
-        Storage storage = new Storage();
         ReportGenerator reportGenerator = new ReportGeneratorImpl(storage);
         String report = reportGenerator.getReport();
-        Assertions.assertEquals("fruit,quantity\n", report);
+        assertEquals("fruit,quantity\n", report);
     }
 
     @Test
     void getReport_withFruits_returnsCorrectReport() {
-        Storage storage = new Storage();
         storage.getFruits().put("apple", 50);
         storage.getFruits().put("banana", 30);
         ReportGenerator reportGenerator = new ReportGeneratorImpl(storage);
         String report = reportGenerator.getReport();
-        String expected = "fruit,quantity"
-                + "apple,50"
-                + "banana,30";
-        Assertions.assertEquals(expected, report);
+        String expected = "fruit,quantity\napple,50\nbanana,30\n";
+        assertEquals(expected, report);
     }
 }
