@@ -14,6 +14,7 @@ public class ReportGeneratorImpl implements ReportGenerator {
     @Override
     public String getReport() {
         StringBuilder report = new StringBuilder(REPORT_HEADER);
+        report.append("\n");
         for (Map.Entry<String, Integer> entry : storage.getAll().entrySet()) {
             report.append(entry.getKey())
                     .append(COMMA)
