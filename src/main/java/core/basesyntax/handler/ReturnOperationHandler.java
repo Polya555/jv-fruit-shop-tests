@@ -1,9 +1,12 @@
-package core.basesyntax;
+package core.basesyntax.handler;
 
-public class SupplyOperationHandler implements OperationHandler {
+import core.basesyntax.FruitTransaction;
+import core.basesyntax.db.Storage;
+
+public class ReturnOperationHandler implements OperationHandler {
     private final Storage storage;
 
-    public SupplyOperationHandler(Storage storage) {
+    public ReturnOperationHandler(Storage storage) {
         this.storage = storage;
     }
 
@@ -14,4 +17,3 @@ public class SupplyOperationHandler implements OperationHandler {
                 currentQuantity + transaction.getQuantity());
     }
 }
-

@@ -1,4 +1,7 @@
-package core.basesyntax;
+package core.basesyntax.handler;
+
+import core.basesyntax.FruitTransaction;
+import core.basesyntax.db.Storage;
 
 public class BalanceOperationHandler implements OperationHandler {
     private final Storage storage;

@@ -1,4 +1,4 @@
-package core.basesyntax;
+package core.basesyntax.db;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

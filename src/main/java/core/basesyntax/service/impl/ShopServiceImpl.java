@@ -1,5 +1,9 @@
-package core.basesyntax;
+package core.basesyntax.service.impl;
 
+import core.basesyntax.FruitTransaction;
+import core.basesyntax.OperationStrategy;
+import core.basesyntax.ShopService;
+import core.basesyntax.handler.OperationHandler;
 import java.util.List;
 
 public class ShopServiceImpl implements ShopService {

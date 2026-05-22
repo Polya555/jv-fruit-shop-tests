@@ -1,7 +1,9 @@
-package core.basesyntax;
+package core.basesyntax.service.impl;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import core.basesyntax.ReportGenerator;
+import core.basesyntax.db.Storage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

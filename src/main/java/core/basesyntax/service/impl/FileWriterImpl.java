@@ -1,4 +1,4 @@
-package core.basesyntax;
+package core.basesyntax.service.impl;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

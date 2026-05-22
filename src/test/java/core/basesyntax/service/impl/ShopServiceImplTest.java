@@ -1,7 +1,16 @@
-package core.basesyntax;
+package core.basesyntax.service.impl;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import core.basesyntax.FruitTransaction;
+import core.basesyntax.OperationStrategy;
+import core.basesyntax.ShopService;
+import core.basesyntax.db.Storage;
+import core.basesyntax.handler.BalanceOperationHandler;
+import core.basesyntax.handler.OperationHandler;
+import core.basesyntax.handler.PurchaseOperationHandler;
+import core.basesyntax.handler.ReturnOperationHandler;
+import core.basesyntax.handler.SupplyOperationHandler;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
